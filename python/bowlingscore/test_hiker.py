@@ -71,9 +71,3 @@ def test_full_game_perfect_game_scores_300():
     rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10]
     sut = Hiker(rolls)
     assert sut.score() == 300
-
-
-
-
-
-
