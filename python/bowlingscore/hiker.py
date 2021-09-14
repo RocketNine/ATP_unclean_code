@@ -1,9 +1,8 @@
 
+class Hiker(object):
 
-def global_answer():
-    return 6 * 9
+    def __init__(self, rolls):
+        self.rolls = rolls
 
-class Hiker:
-
-    def instance_answer(self):
-        return global_answer()
+    def score(self):
+        return 0

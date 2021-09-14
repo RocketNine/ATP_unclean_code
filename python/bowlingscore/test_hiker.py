@@ -1,9 +1,79 @@
-from hiker import global_answer, Hiker
+from hiker import Hiker
 
 
-def test_global_function():
-    assert global_answer() == 42
+def test_full_game_all_gutter_balls():
+    rolls = [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 0
 
 
-def test_instance_method():
-    assert Hiker().instance_answer() == 42
+def test_full_game_each_frame_only_one_pin_knocked_down():
+    rolls = [1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1]
+    sut = Hiker(rolls)
+    assert sut.score() == 20
+
+
+def test_full_game_each_frame_three_pins_knocked_down():
+    rolls = [3,3, 3,3, 3,3, 3,3, 3,3, 3,3, 3,3, 3,3, 3,3, 3,3]
+    sut = Hiker(rolls)
+    assert sut.score() == 60
+
+
+def test_partial_game_no_spare_or_strikes():
+    rolls = [1,5, 6,3]
+    sut = Hiker(rolls)
+    assert sut.score() == 15
+
+
+def test_partial_game_spare_in_first_frame_followed_by_gutter_ball():
+    rolls = [7,3, 0]
+    sut = Hiker(rolls)
+    assert sut.score() == 10
+
+
+def test_partial_game_spare_next_roll_is_added_to_spare():
+    rolls = [9,1, 4]
+    sut = Hiker(rolls)
+    assert sut.score() == 18
+
+
+def test_partial_game_spares_in_both_frames_1_and_2():
+    rolls = [7,3, 9,1, 9]
+    sut = Hiker(rolls)
+    assert sut.score() == 47
+
+
+def test_partial_game_strike_in_first_frame_followed_by_gutter_balls():
+    rolls = [10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 10
+
+
+def test_partial_game_strike_in_first_frame_next_two_rolls_added_to_strike():
+    rolls = [10, 7,2]
+    sut = Hiker(rolls)
+    assert sut.score() == 28
+
+
+def test_partial_game_strike_in_third_frame_rolls_in_frame_4_added_to_strike():
+    rolls = [6,3, 10, 7,2]
+    sut = Hiker(rolls)
+    assert sut.score() == 37
+
+
+def test_partial_game_three_strikes_followed_by_gutter_balls():
+    rolls = [10, 10, 10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 37
+
+
+def test_full_game_perfect_game_scores_300():
+    rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10]
+    sut = Hiker(rolls)
+    assert sut.score() == 300
+
+
+
+
+
+
