@@ -64,10 +64,13 @@ def test_partial_game_strike_in_third_frame_rolls_in_frame_4_added_to_strike():
 def test_partial_game_three_strikes_followed_by_gutter_balls():
     rolls = [10, 10, 10, 0,0]
     sut = Hiker(rolls)
-    assert sut.score() == 37
+    assert sut.score() == 60
 
 
 def test_full_game_perfect_game_scores_300():
     rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10]
     sut = Hiker(rolls)
     assert sut.score() == 300
+
+
+# The java version probably uses 10,0 to represent a strike, and all the indexes assume that blank slot
