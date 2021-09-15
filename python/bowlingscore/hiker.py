@@ -41,6 +41,7 @@ class Hiker(object):
             #            else:
             #              y += self.rolls[i+1];
             #              y += self.rolls[i+2];
-            y += self.rolls[i]
+            if i < 20:
+                y += self.rolls[i]
 
         return y
