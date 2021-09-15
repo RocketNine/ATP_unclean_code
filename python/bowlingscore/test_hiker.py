@@ -71,3 +71,9 @@ def test_full_game_perfect_game_scores_300():
     rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10]
     sut = Hiker(rolls)
     assert sut.score() == 300
+
+
+def test_full_game_example_in_readme():
+    rolls = [10, 9,1, 5,5, 7,2, 10, 10, 10, 9,0, 8,2, 9,1,10]
+    sut = Hiker(rolls)
+    assert sut.score() == 187
