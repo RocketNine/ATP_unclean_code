@@ -44,33 +44,30 @@ def test_partial_game_spares_in_both_frames_1_and_2():
 
 
 def test_partial_game_strike_in_first_frame_followed_by_gutter_balls():
-    rolls = [0,10, 0,0]
+    rolls = [10, 0,0]
     sut = Hiker(rolls)
     assert sut.score() == 10
 
 
 def test_partial_game_strike_in_first_frame_next_two_rolls_added_to_strike():
-    rolls = [0,10, 7,2]
+    rolls = [10, 7,2]
     sut = Hiker(rolls)
     assert sut.score() == 28
 
 
 def test_partial_game_strike_in_third_frame_rolls_in_frame_4_added_to_strike():
-    rolls = [6,3, 0,10, 7,2]
+    rolls = [6,3, 10, 7,2]
     sut = Hiker(rolls)
     assert sut.score() == 37
 
 
 def test_partial_game_three_strikes_followed_by_gutter_balls():
-    rolls = [0,10, 0,10, 0,10, 0,0]
+    rolls = [10, 10, 10, 0,0]
     sut = Hiker(rolls)
     assert sut.score() == 60
 
 
 def test_full_game_perfect_game_scores_300():
-    rolls = [0,10, 0,10, 0,10, 0,10, 0,10, 0,10, 0,10, 0,10, 0,10, 0,10, 0,10,0,10]
+    rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10]
     sut = Hiker(rolls)
     assert sut.score() == 300
-
-
-# The java version probably uses 10,0 to represent a strike, and all the indexes assume that blank slot
