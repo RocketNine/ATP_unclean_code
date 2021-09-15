@@ -49,6 +49,7 @@ public class Hiker {
                             y += p[i + 2];
                             y += p[i + 3];
                         }
+                        y += p[i];
                     } else {
                         y += p[i];
 //                        y += p[i+2];
@@ -59,7 +60,9 @@ public class Hiker {
                 // y += p[i+1];
                 // y += p[i+2];
             }
-            y += p[i];
+            if (i < 20) {
+                y += p[i];
+            }
         }
         return y;
     }

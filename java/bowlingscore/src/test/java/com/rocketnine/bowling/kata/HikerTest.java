@@ -134,6 +134,38 @@ public class HikerTest {
         assertEquals(300, bowlingGame.score());
     }
 
+    @Test
+    void fullGame_Example_in_Readme() {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(10);
+
+        bowlingGame.bowl(9);
+        bowlingGame.bowl(1);
+
+        bowlingGame.bowl(5);
+        bowlingGame.bowl(5);
+
+        bowlingGame.bowl(7);
+        bowlingGame.bowl(2);
+
+        bowlingGame.bowl(10);
+
+        bowlingGame.bowl(10);
+
+        bowlingGame.bowl(10);
+
+        bowlingGame.bowl(9);
+        bowlingGame.bowl(0);
+
+        bowlingGame.bowl(8);
+        bowlingGame.bowl(2);
+
+        bowlingGame.bowl(9);
+        bowlingGame.bowl(1);
+        bowlingGame.bowl(10);
+
+        assertEquals(187, bowlingGame.score());
+    }
 
     private void rollSomeBalls(Hiker bowlingGame, int b) {
         //TODO - doesn't check b is valid
