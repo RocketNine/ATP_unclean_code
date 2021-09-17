@@ -14,4 +14,4 @@ The game score is the total of all frame scores.
 
 You are supplied with a number of tests that demonstrate scoring of games. Some are complete games, some are partial.
 
-There is an implemntation that passes all tests. Your job is to make the code more understandable and maintainable.
+There is an implementation that passes all tests. Your job is to make the code more understandable and maintainable.
