@@ -84,7 +84,7 @@ public class HikerTest {
     }
 
     @Test
-    void partialGame_strikeIn3rdFrame_rollsInFrame4AddedToStrike() {
+    void partialGame_strikeIn2ndFrame_rollsInFrame3AddedToStrike() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(6);
         bowlingGame.bowl(3);
