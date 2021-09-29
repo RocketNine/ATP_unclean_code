@@ -55,7 +55,7 @@ def test_partial_game_strike_in_first_frame_next_two_rolls_added_to_strike():
     assert sut.score() == 28
 
 
-def test_partial_game_strike_in_third_frame_rolls_in_frame_4_added_to_strike():
+def test_partial_game_strike_in_second_frame_rolls_in_frame_3_added_to_strike():
     rolls = [6,3, 10, 7,2]
     sut = Hiker(rolls)
     assert sut.score() == 37
