@@ -42,7 +42,7 @@ describe('Full game can be scored correctly.', () => {
 
         actual = bowling.score()
 
-        expect(actual).toEqual(60);
+        expect(actual).toEqual(187);
     });
 
     test('perfect game scores three hundred', () => {
@@ -53,7 +53,7 @@ describe('Full game can be scored correctly.', () => {
 
         actual = bowling.score()
 
-        expect(actual).toEqual(60);
+        expect(actual).toEqual(300);
     });
 
 
