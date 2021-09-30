@@ -1,3 +1,5 @@
+//"use strict";
+
 class Hiker {
 
     constructor(rolls) {
@@ -55,7 +57,7 @@ class Hiker {
                             this.y += this.r[i + 3];
                         }
                     } else {
-                        this.y += this.r[i]
+                        this.y += this.r[i];
                         // y += this.rolls[i + 2]
                         // y += 10
                         //#            else

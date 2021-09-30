@@ -1,3 +1,4 @@
+//"use strict";
 const Hiker = require('./hiker');
 
 describe('Full game can be scored correctly.', () => {
@@ -7,7 +8,7 @@ describe('Full game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(0);
     });
@@ -18,7 +19,7 @@ describe('Full game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(20);
     });
@@ -29,7 +30,7 @@ describe('Full game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(60);
     });
@@ -40,7 +41,7 @@ describe('Full game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(187);
     });
@@ -51,7 +52,7 @@ describe('Full game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(300);
     });
@@ -66,7 +67,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(15);
     });
@@ -77,7 +78,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(10);
     });
@@ -88,7 +89,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(18);
     });
@@ -99,7 +100,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(47);
     });
@@ -110,7 +111,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(10);
     });
@@ -121,7 +122,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(28);
     });
@@ -132,7 +133,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(37);
     });
@@ -143,7 +144,7 @@ describe('Partial game can be scored correctly.', () => {
         ];
         const bowling = new Hiker(rolls);
 
-        actual = bowling.score()
+        actual = bowling.score();
 
         expect(actual).toEqual(60);
     });
