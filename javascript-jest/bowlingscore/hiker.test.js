@@ -148,7 +148,4 @@ describe('Partial game can be scored correctly.', () => {
 
         expect(actual).toEqual(60);
     });
-
-
-    // CONTINUE WITH STRIKE TESTS AND THEN FULL GAMES
 });
