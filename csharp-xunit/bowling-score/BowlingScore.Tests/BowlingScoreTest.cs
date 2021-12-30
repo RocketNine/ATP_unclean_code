@@ -3,7 +3,7 @@ using BowlingScore;
 
 namespace BowlingScore.Tests;
 
-public class UnitTest1
+public class BowlingScoreTest
 {
     [Fact]
     public void IsStrike_SmokeTest()
