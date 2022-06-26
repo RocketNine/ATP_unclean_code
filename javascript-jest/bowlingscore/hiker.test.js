@@ -2,7 +2,7 @@
 const Hiker = require('./hiker');
 
 describe('Full game can be scored correctly.', () => {
-    test('all gutters shuold score 0', () => {
+    test('all gutters should score 0', () => {
         const rolls = [
             0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0,
         ];
