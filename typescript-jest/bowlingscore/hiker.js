@@ -29,8 +29,8 @@ class Hiker {
         for (let i = 0; i < this.r.length; i++) {
             if (this.r[i] != 10) {
                 if ((i > 0) && (i % 2 == 1)) {
-                    this.y2 = this.r[i] + this.r[i - 1];
-                    if (this.y2 == 10) {
+                    let y2 = this.r[i] + this.r[i - 1];
+                    if (y2 == 10) {
                         y += this.r[i + 1];
                     }
                 }
