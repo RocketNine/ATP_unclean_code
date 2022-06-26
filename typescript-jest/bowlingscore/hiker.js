@@ -14,7 +14,7 @@ class Hiker {
         // }
         //
 
-        for (let i = 0; i < this.r.length; i++) {
+        for (var i = 0; i < this.r.length; i++) {
             if (this.r[i] == 10) {
                 r2.push(0);
             }
@@ -26,7 +26,7 @@ class Hiker {
     score() {
         let y = 0;
 
-        for (let i = 0; i < this.r.length; i++) {
+        for (var i = 0; i < this.r.length; i++) {
             if (this.r[i] != 10) {
                 if ((i > 0) && (i % 2 == 1)) {
                     let y2 = this.r[i] + this.r[i - 1];
