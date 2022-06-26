@@ -5,7 +5,7 @@ class Hiker {
     /** @param {number[]} rolls */
     constructor(rolls) {
         this.r = rolls;
-        this.r2 = [];
+        let r2 = [];
 
         // for (const value of this.r) {
         //     if (value == 10)
@@ -16,11 +16,11 @@ class Hiker {
 
         for (let i = 0; i < this.r.length; i++) {
             if (this.r[i] == 10) {
-                this.r2.push(0);
+                r2.push(0);
             }
-            this.r2.push(this.r[i]);
+            r2.push(this.r[i]);
         }
-        this.r = this.r2;
+        this.r = r2;
     }
 
     score() {
