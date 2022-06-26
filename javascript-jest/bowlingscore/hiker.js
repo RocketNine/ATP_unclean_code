@@ -14,16 +14,12 @@ class Hiker {
         //
 
         for (let i = 0; i < this.r.length; i++) {
-            if (this.isStrike(i)) {
+            if (this.r[i] == 10) {
                 this.r2.push(0);
             }
             this.r2.push(this.r[i]);
         }
         this.r = this.r2;
-    }
-
-    isStrike(i) {
-        return this.r[i] == 10;
     }
 
     score() {
