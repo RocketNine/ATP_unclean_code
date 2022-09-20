@@ -15,3 +15,14 @@ The game score is the total of all frame scores.
 You are supplied with a number of tests that demonstrate scoring of games. Some are complete games, some are partial.
 
 There is an implementation that passes all tests. Your job is to make the code more understandable and maintainable.
+
+### Running Tests
+
+To run the tests at the command line
+```
+pytest
+```
+or
+```
+python3 -m unittest test_hiker.py
+```
