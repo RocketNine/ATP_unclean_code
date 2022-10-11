@@ -1,6 +1,6 @@
 # Bowling Game Refactoring Kata
 
-<img src="http://www.wpclipart.com/recreation/sports/bowling/bowling_scoresheet_example.png"> 
+<img src="https://rocketninesolutions.com/wp-content/uploads/2022/10/csd_bowling_scoresheet_example.png">
 
 The bowlingGame consists of 10 frames. In each frame the player has two rolls to knock down 10 pins. The score for the frame is the total number of pins knocked down, plus bonuses for strikes and spares.
 
