@@ -34,7 +34,7 @@ export class Hiker {
         }
       } else if (this.r[i] == 10) {
 
-        if (i <= 16) {
+        if (i <= 17) {
           if (this.r[i + 2] != 10) {
             y += this.r[i + 1];
             y += this.r[i + 2];
@@ -47,7 +47,8 @@ export class Hiker {
             }
           }
         } else {
-          if (i == 17) {
+          if (i == 18) {
+            //RF13213 - Lead says this code isn't needed
             if (this.r[i + 2] != 10) {
               y += this.r[i + 1];
               y += this.r[i + 2];
@@ -56,7 +57,16 @@ export class Hiker {
               y += this.r[i + 3];
             }
           } else {
-            y += this.r[i];
+            if (i === 21) {
+              if (this.r[i] == 10)
+                y += this.r[i];
+              if (this.r[i+1] < 10) {
+                y +=  this.r[i+1];
+              }
+            } else if (i === 23) {
+              y += this.r[i];
+            }
+            // y += this.r[i];
             // y += this.rolls[i + 2]
             // y += 10
             //#            else
@@ -66,6 +76,7 @@ export class Hiker {
         }
         //              if(this.y2 == 10)
         //              y = this.rolls[i + 1];
+
       }
       if (i < 20) {
         y += this.r[i];

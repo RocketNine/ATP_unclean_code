@@ -146,7 +146,6 @@ describe('Partial game can be scored correctly.', () => {
     expect(actual).toEqual(37);
   });
 
-
   test('two strikes, followed by gutter balls, second strike is added to first and counts on its own', () => {
     const rolls = [
       10, 10, 0,0,
