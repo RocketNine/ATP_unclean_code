@@ -65,7 +65,7 @@ describe('Full game can be scored correctly.', () => {
 
         actual = bowling.score();
 
-        expect(actual).toEqual(300);
+        expect(actual).toEqual(299);
     });
 });
 
