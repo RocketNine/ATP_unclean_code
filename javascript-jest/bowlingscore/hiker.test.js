@@ -147,6 +147,17 @@ describe('Partial game can be scored correctly.', () => {
         expect(actual).toEqual(37);
     });
 
+    test('two strikes, followed by gutter balls, second strike is added to first and counts on its own', () => {
+        const rolls = [
+            10, 10, 0,0,
+        ];
+        const bowling = new Hiker(rolls);
+
+        actual = bowling.score();
+
+        expect(actual).toEqual(30);
+    });
+
     test('three strikes in a row is a turkey', () => {
         const rolls = [
             10, 10, 10, 0,0,
