@@ -96,7 +96,7 @@ public class HikerTest {
     }
 
     @Test
-    public void partialGame_twoStrikes_FollowedByGutterBalls_SeconStrikeAddedToFirst_andCountedOnItsOwn() {
+    public void partialGame_twoStrikes_FollowedByGutterBalls_SecondStrikeAddedToFirst_andCountedOnItsOwn() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(10);
         bowlingGame.bowl(10);
