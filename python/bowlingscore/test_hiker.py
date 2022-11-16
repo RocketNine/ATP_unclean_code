@@ -60,6 +60,10 @@ def test_partial_game_strike_in_second_frame_rolls_in_frame_3_added_to_strike():
     sut = Hiker(rolls)
     assert sut.score() == 37
 
+def test_partial_game_two_strikes_followed_by_gutter_balls_second_strike_added_to_first_and_counted_on_its_own():
+    rolls = [10, 10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 30
 
 def test_partial_game_three_strikes_followed_by_gutter_balls():
     rolls = [10, 10, 10, 0,0]
