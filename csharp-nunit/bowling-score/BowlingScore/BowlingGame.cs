@@ -2,17 +2,18 @@
 
 public class BowlingGame
 {
-    private int[] p = new int[22];
-    private int x = 0;
 
+    private int[] p = new int[24];
+    private int x = 0;
+    
     public void Bowl(int pinsKnockedDown)
     {
         if (pinsKnockedDown >= 10) {
             x++;
         }
-        if (x < 22) {
+        if (x <= 23) {
             this.p[x++] = pinsKnockedDown;
-        }
+        }    
     }
 
     public int Score()
@@ -30,7 +31,7 @@ public class BowlingGame
                     //}
                 }
             } else if (p[i] == 10) {
-                if (i <= 16) {
+                if (i <= 17) {
                     if (p[i + 2] != 10) {
                         y += p[i + 1];
                         y += p[i + 2];
@@ -43,7 +44,8 @@ public class BowlingGame
                         }
                     }
                 } else {
-                    if (i == 17) {
+                    if (i == 18) {
+                        //RF13213 - Lead says this code isn't needed
                         if (p[i + 2] != 10) {
                             y += p[i + 1];
                             y += p[i + 2];
@@ -53,7 +55,19 @@ public class BowlingGame
                         }
                         y += p[i];
                     } else {
-                        y += p[i];
+                        if (i == 21) {
+                            if (p[i+1] < 10) {
+                                y += p[i + 1];
+                            }
+                            if (p[i] == 10) {
+                                y += p[i];
+                            }
+//                            } else {
+//                                y += p[i + 1];
+//                            }
+                        } else if (i == 23) {
+                            y += p[i];
+                        }
 //                        y += p[i+2];
 //                        y += 10;
                     }
@@ -69,3 +83,4 @@ public class BowlingGame
         return y;
     }
 }
+
