@@ -20,7 +20,7 @@ class Hiker(object):
             #               if (y2 == 10) {
             #               y = self.rolls[i +1];
             elif self.r[i] == 10:
-                if i <= 16:
+                if i <= 17:
                     if self.r[i + 2] != 10:
                         y += self.r[i + 1]
                         y += self.r[i + 2]
@@ -31,15 +31,22 @@ class Hiker(object):
                         else:
                             y += self.r[i + 4]
                 else:
-                    if i == 17:
+                    if i == 18:
+                        #RF13213 - Lead says this code isn't needed
                         if self.r[i + 2] != 10:
                             y += self.r[i + 1]
                             y += self.r[i + 2]
                         else:
                             y += self.r[i + 2]
                             y += self.r[i + 3]
-                    else:
+                    elif i == 21:
+                        if self.r[i] == 10:
+                            y += self.r[i]
+                        if (i+1 < len(self.r) and (self.r[i+1] < 10)):
+                            y += self.r[i + 1]
+                    elif i == 23:
                         y += self.r[i]
+                    #     y += self.r[i]
                         # y += self.rolls[i+2]
                         # y += 10
             #            else:
