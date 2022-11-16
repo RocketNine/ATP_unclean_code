@@ -137,6 +137,25 @@ public class UnitTest1
     }
 
     [TestMethod]
+    public void fullGame_almostPerfectGame_missOnePinOnLastRoll() {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(9);
+
+        Assert.AreEqual(299, bowlingGame.Score());
+    }
+
+    [TestMethod]
     public void fullGame_Example_in_Readme() {
         var bowlingGame = new BowlingGame();
         bowlingGame.Bowl(10);
