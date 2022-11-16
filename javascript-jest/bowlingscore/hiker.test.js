@@ -57,7 +57,16 @@ describe('Full game can be scored correctly.', () => {
         expect(actual).toEqual(300);
     });
 
+    test('almost perfect game scores 299', () => {
+        const rolls = [
+            10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9
+        ];
+        const bowling = new Hiker(rolls);
 
+        actual = bowling.score();
+
+        expect(actual).toEqual(300);
+    });
 });
 
 describe('Partial game can be scored correctly.', () => {
