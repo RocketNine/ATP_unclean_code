@@ -56,7 +56,16 @@ describe('Full game can be scored correctly.', () => {
     expect(actual).toEqual(300);
   });
 
+  test('almost perfect game scores 299', () => {
+    const rolls = [
+      10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9
+    ];
+    const bowling = new Hiker(rolls);
 
+    let actual = bowling.score();
+
+    expect(actual).toEqual(299);
+  });
 });
 
 describe('Partial game can be scored correctly.', () => {
@@ -135,6 +144,18 @@ describe('Partial game can be scored correctly.', () => {
     let actual = bowling.score();
 
     expect(actual).toEqual(37);
+  });
+
+
+  test('two strikes, followed by gutter balls, second strike is added to first and counts on its own', () => {
+    const rolls = [
+      10, 10, 0,0,
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(30);
   });
 
   test('three strikes in a row is a turkey', () => {
