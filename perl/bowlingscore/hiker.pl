@@ -1,4 +1,4 @@
-se strict;
+use strict;
 use warnings;
 use List::Util qw(sum);
 
