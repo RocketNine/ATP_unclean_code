@@ -1,11 +1,10 @@
 package com.rocketnine.bowling.kata;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HikerTest {
+class HikerTest {
 
     @Test
     void fullGame_allGutterBalls() {
@@ -38,7 +37,7 @@ public class HikerTest {
         assertEquals(15, bowlingGame.score());
     }
     @Test
-    public void partialGame_spareInFirstFrame_followedByGutterBalls() {
+    void partialGame_spareInFirstFrame_followedByGutterBalls() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(7);
         bowlingGame.bowl(3);
@@ -67,7 +66,7 @@ public class HikerTest {
     }
 
     @Test
-    public void partialGame_strikeInFirstFrame_followedByGutterBalls() {
+    void partialGame_strikeInFirstFrame_followedByGutterBalls() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(10);
         bowlingGame.bowl(0);
@@ -96,7 +95,7 @@ public class HikerTest {
     }
 
     @Test
-    public void partialGame_twoStrikes_FollowedByGutterBalls_SecondStrikeAddedToFirst_andCountedOnItsOwn() {
+    void partialGame_twoStrikes_FollowedByGutterBalls_SecondStrikeAddedToFirst_andCountedOnItsOwn() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(10);
         bowlingGame.bowl(10);
