@@ -4,7 +4,7 @@ public class BowlingGame
 {
 
     private int[] p = new int[24];
-    private int x = 0;
+    private int x;
     
     public void Bowl(int pinsKnockedDown)
     {
