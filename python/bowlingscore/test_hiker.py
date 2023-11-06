@@ -60,10 +60,12 @@ def test_partial_game_strike_in_second_frame_rolls_in_frame_3_added_to_strike():
     sut = Hiker(rolls)
     assert sut.score() == 37
 
+
 def test_partial_game_two_strikes_followed_by_gutter_balls_second_strike_added_to_first_and_counted_on_its_own():
     rolls = [10, 10, 0,0]
     sut = Hiker(rolls)
     assert sut.score() == 30
+
 
 def test_partial_game_three_strikes_followed_by_gutter_balls():
     rolls = [10, 10, 10, 0,0]
@@ -76,10 +78,12 @@ def test_full_game_perfect_game_scores_300():
     sut = Hiker(rolls)
     assert sut.score() == 300
 
+
 def test_full_game_almost_perfect_game_miss_one_pin_on_last_roll():
     rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9]
     sut = Hiker(rolls)
     assert sut.score() == 299
+
 
 def test_full_game_example_in_readme():
     rolls = [10, 9,1, 5,5, 7,2, 10, 10, 10, 9,0, 8,2, 9,1,10]
