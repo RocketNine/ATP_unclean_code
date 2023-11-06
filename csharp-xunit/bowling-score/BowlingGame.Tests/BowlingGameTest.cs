@@ -1,5 +1,4 @@
 using Xunit;
-using BowlingGame;
 
 namespace BowlingGame.Tests;
 
