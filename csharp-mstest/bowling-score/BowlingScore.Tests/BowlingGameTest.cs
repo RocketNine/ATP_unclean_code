@@ -97,7 +97,7 @@ public class UnitTest1
     }
 
     [TestMethod]
-    public void partialGame_twoStrikes_FollowedByGutterBalls_SeconStrikeAddedToFirst_andCountedOnItsOwn() {
+    public void partialGame_twoStrikes_FollowedByGutterBalls_SecondStrikeAddedToFirst_andCountedOnItsOwn() {
         var bowlingGame = new BowlingGame();
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
