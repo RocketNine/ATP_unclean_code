@@ -8,7 +8,7 @@ public class BowlingGameTest
     public void fullGame_allGutterBalls()
     {
         var bowlingGame = new BowlingGame();
-        rollSomeBalls(bowlingGame, 0);
+        RollSomeBalls(bowlingGame, 0);
 
         Assert.AreEqual(0, bowlingGame.Score());
     }
@@ -16,14 +16,14 @@ public class BowlingGameTest
     [Test]
     public void fullGame_eachFrame_onlyOnePinKnockedDown() {
         var bowlingGame = new BowlingGame();
-        rollSomeBalls(bowlingGame, 1);
+        RollSomeBalls(bowlingGame, 1);
         Assert.AreEqual(20, bowlingGame.Score());
     }
 
     [Test]
     public void fullGame_eachFrame_threePinsKnockedDown() {
         var bowlingGame = new BowlingGame();
-        rollSomeBalls(bowlingGame, 3);
+        RollSomeBalls(bowlingGame, 3);
         Assert.AreEqual(60, bowlingGame.Score());
     }
 
@@ -187,7 +187,7 @@ public class BowlingGameTest
         Assert.AreEqual(187, bowlingGame.Score());
     }
 
-    private void rollSomeBalls(BowlingGame bowlingGame, int b)
+    private void RollSomeBalls(BowlingGame bowlingGame, int b)
     {
         //TODO - doesn't check b is valid
         //TODO - doesn't work when b>=5
