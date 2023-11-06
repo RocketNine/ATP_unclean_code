@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BowlingScore.Tests;
 
 [TestClass]
-public class UnitTest1
+public class BowlingGameTest
 {
     [TestMethod]
     public void fullGame_allGutterBalls()
