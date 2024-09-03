@@ -24,7 +24,9 @@ class Hiker(object):
             #               y = self.rolls[i +1];
             elif self.r[i] == 10:
                 if i <= 17:
-                    if self.r[i + 2] != 10:
+                    if self.r[i-1] == -1:
+                        y += max(0, self.r[i + 1])
+                    elif self.r[i + 2] != 10:
                         y += max(0, self.r[i + 1])
                         y += max(0, self.r[i + 2])
                     else:
