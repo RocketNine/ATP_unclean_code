@@ -35,9 +35,9 @@ class Hiker(object):
                     else:
                         y += self.r[i + 2]
                         if self.r[i + 4] < 10:
-                            y += self.r[i + 3]
+                            y += max(0, self.r[i + 3])
                         else:
-                            y += self.r[i + 4]
+                            y += max(0, self.r[i + 4])
                 else:
                     if i == 18:
                         #RF13213 - Lead says this code isn't needed
@@ -50,7 +50,7 @@ class Hiker(object):
                     elif i == 21:
                         if self.r[i] == 10:
                             y += self.r[i]
-                        if (i+1 < len(self.r) and (self.r[i+1] < 10)):
+                        if i+1 < len(self.r) and (self.r[i + 1] < 10):
                             y += self.r[i + 1]
                     elif i == 23:
                         y += self.r[i]
