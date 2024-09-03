@@ -67,6 +67,85 @@ public class BowlingGameTest
         Assert.AreEqual(47, bowlingGame.Score());
     }
 
+        [TestMethod]
+    public void partialGame_spare_after_gutter_then_gutters()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(0);
+        Assert.AreEqual(10, bowlingGame.Score());
+    }
+    
+    [TestMethod]
+    public void partialGame_spare_after_gutter_then_one_pin()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(1);
+        bowlingGame.Bowl(1);
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(0);
+        Assert.AreEqual(13, bowlingGame.Score());
+    }
+    
+    [TestMethod]
+    public void partialGame_spare_after_gutter_then_open_frame()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(5);
+        bowlingGame.Bowl(4);
+        bowlingGame.Bowl(0);
+        Assert.AreEqual(24, bowlingGame.Score());
+    }
+        
+    [TestMethod]
+    public void partialGame_spare_after_gutter_then_spare()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(5);
+        bowlingGame.Bowl(5);
+        bowlingGame.Bowl(0);
+        Assert.AreEqual(25, bowlingGame.Score());
+    }
+        
+    [TestMethod]
+    public void partialGame_spare_after_gutter_then_strike()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(0);
+        Assert.AreEqual(30, bowlingGame.Score());
+    }
+        
+    [TestMethod]
+    public void partialGame_spare_after_gutter_followed_by_all_strikes()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        Assert.AreEqual(290, bowlingGame.Score());
+    }
+    
     [TestMethod]
     public void partialGame_strikeInFirstFrame_followedByGutterBalls() {
         var bowlingGame = new BowlingGame();
