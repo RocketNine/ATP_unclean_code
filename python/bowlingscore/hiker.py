@@ -4,9 +4,12 @@ class Hiker(object):
         self.r = rolls
         self.r2 = []
         for i in range(0, len(self.r)):
-            if self.r[i] == 10:
+            if self.r[i] == 10 and len(self.r2) % 2 == 0:
                 self.r2.append(0)
-            self.r2.append(self.r[i])
+            if self.r[i] == 0:
+                self.r2.append(-1)
+            else:
+                self.r2.append(self.r[i])
         self.r = self.r2
 
     def score(self):
@@ -16,20 +19,25 @@ class Hiker(object):
                 if i > 0 and i % 2 == 1:
                     y2 = self.r[i] + self.r[i - 1]
                     if y2 == 10:
-                        y += self.r[i + 1]
+                        y += max(0, self.r[i + 1])
             #               if (y2 == 10) {
             #               y = self.rolls[i +1];
             elif self.r[i] == 10:
                 if i <= 17:
-                    if self.r[i + 2] != 10:
-                        y += self.r[i + 1]
-                        y += self.r[i + 2]
+                    if self.r[i-1] == -1:
+                        if self.r[i + 2] != 10:
+                            y += max(0, self.r[i + 1])
+                        else:
+                            y += max(0, self.r[i + 2])
+                    elif self.r[i + 2] != 10:
+                        y += max(0, self.r[i + 1])
+                        y += max(0, self.r[i + 2])
                     else:
                         y += self.r[i + 2]
                         if self.r[i + 4] < 10:
-                            y += self.r[i + 3]
+                            y += max(0, self.r[i + 3])
                         else:
-                            y += self.r[i + 4]
+                            y += max(0, self.r[i + 4])
                 else:
                     if i == 18:
                         #RF13213 - Lead says this code isn't needed
@@ -42,7 +50,7 @@ class Hiker(object):
                     elif i == 21:
                         if self.r[i] == 10:
                             y += self.r[i]
-                        if (i+1 < len(self.r) and (self.r[i+1] < 10)):
+                        if i+1 < len(self.r) and (self.r[i + 1] < 10):
                             y += self.r[i + 1]
                     elif i == 23:
                         y += self.r[i]
@@ -53,6 +61,7 @@ class Hiker(object):
             #              y += self.rolls[i+1];
             #              y += self.rolls[i+2];
             if i < 20:
-                y += self.r[i]
+                tmp = max(0, self.r[i])
+                y += tmp
 
         return y
