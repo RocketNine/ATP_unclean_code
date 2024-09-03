@@ -4,9 +4,12 @@ class Hiker(object):
         self.r = rolls
         self.r2 = []
         for i in range(0, len(self.r)):
-            if self.r[i] == 10:
+            if self.r[i] == 10 and len(self.r2) % 2 == 0:
                 self.r2.append(0)
-            self.r2.append(self.r[i])
+            if self.r[i] == 0:
+                self.r2.append(-1)
+            else:
+                self.r2.append(self.r[i])
         self.r = self.r2
 
     def score(self):
@@ -22,8 +25,8 @@ class Hiker(object):
             elif self.r[i] == 10:
                 if i <= 17:
                     if self.r[i + 2] != 10:
-                        y += self.r[i + 1]
-                        y += self.r[i + 2]
+                        y += max(0, self.r[i + 1])
+                        y += max(0, self.r[i + 2])
                     else:
                         y += self.r[i + 2]
                         if self.r[i + 4] < 10:
@@ -53,6 +56,7 @@ class Hiker(object):
             #              y += self.rolls[i+1];
             #              y += self.rolls[i+2];
             if i < 20:
-                y += self.r[i]
+                tmp = max(0, self.r[i])
+                y += tmp
 
         return y

@@ -89,3 +89,39 @@ def test_full_game_example_in_readme():
     rolls = [10,  9, 1,  5, 5,  7, 2,  10, 10, 10,  9, 0,  8, 2,  9, 1, 10]
     sut = Hiker(rolls)
     assert sut.score() == 187
+
+# Gutter followed by all strikes is returning 370!
+# Don't seem to have any tests for gutter then spare calculation
+# Triggered by gutter then spare. Next frame needs to have pins in both first and second roll
+# suspect the normalizing stuff at the start?
+# Init ALWAYS assumes 10 is a strike and then appends an empty roll
+# might be able to check i is the second roll?
+def test_spare_after_gutter_then_gutters():
+    rolls = [0,10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 10
+
+def test_spare_after_gutter_then_one_pin():
+    rolls = [0,10, 1,1, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 13
+
+def test_spare_after_gutter_then_open_frame():
+    rolls = [0,10, 5,4, 0]
+    sut = Hiker(rolls)
+    assert sut.score() == 24
+
+def test_spare_after_gutter_then_spare():
+    rolls = [0,10, 5,5, 0]
+    sut = Hiker(rolls)
+    assert sut.score() == 25
+
+def test_spare_after_gutter_then_strike():
+    rolls = [0,10, 10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 30
+
+def test_spare_after_gutter_followed_by_all_strikes():
+    rolls = [0,10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+    sut = Hiker(rolls)
+    assert sut.score() == 290
