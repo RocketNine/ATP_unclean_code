@@ -2,10 +2,9 @@
 
 public class BowlingGame
 {
-
     private int[] p = new int[24];
     private int x = 0;
-    
+
     public void Bowl(int pinsKnockedDown)
     {
         if ((pinsKnockedDown >= 10) && (x % 2 == 0))
@@ -24,12 +23,12 @@ public class BowlingGame
             {
                 this.p[x++] = pinsKnockedDown;
             }
-        } 
+        }
     }
 
     public int Score()
     {
-int y = 0;
+        int y = 0;
         for (int i = 0; i < p.Length; i++)
         {
             if (p[i] != 10)
@@ -138,4 +137,3 @@ int y = 0;
         return y;
     }
 }
-
