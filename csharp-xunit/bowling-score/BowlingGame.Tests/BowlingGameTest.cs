@@ -90,7 +90,7 @@ public class BowlingGameTest
         Assert.Equal(13, bowlingGame.Score());
     }
     
-    [Fact(Skip = "wip")]
+    [Fact]
     public void partialGame_spare_after_gutter_then_open_frame()
     {
         var bowlingGame = new BowlingGame.BowlingGame();
@@ -102,7 +102,7 @@ public class BowlingGameTest
         Assert.Equal(24, bowlingGame.Score());
     }
     
-    [Fact(Skip = "wip")]
+    [Fact]
     public void partialGame_spare_after_gutter_then_spare()
     {
         var bowlingGame = new BowlingGame.BowlingGame();
@@ -114,7 +114,7 @@ public class BowlingGameTest
         Assert.Equal(25, bowlingGame.Score());
     }
     
-    [Fact(Skip = "wip")]
+    [Fact]
     public void partialGame_spare_after_gutter_then_strike()
     {
         var bowlingGame = new BowlingGame.BowlingGame();
@@ -125,7 +125,7 @@ public class BowlingGameTest
         Assert.Equal(30, bowlingGame.Score());
     }
     
-    [Fact(Skip = "wip")]
+    [Fact]
     public void partialGame_spare_after_gutter_followed_by_all_strikes()
     {
         var bowlingGame = new BowlingGame.BowlingGame();
