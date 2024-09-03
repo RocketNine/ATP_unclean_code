@@ -67,6 +67,85 @@ public class BowlingGameTest
     }
 
     [Fact]
+    public void partialGame_spare_after_gutter_then_gutters()
+    {
+        var bowlingGame = new BowlingGame.BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(0);
+        Assert.Equal(10, bowlingGame.Score());
+    }
+
+    [Fact(Skip = "wip")]
+    public void partialGame_spare_after_gutter_then_one_pin()
+    {
+        var bowlingGame = new BowlingGame.BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(1);
+        bowlingGame.Bowl(1);
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(0);
+        Assert.Equal(10, bowlingGame.Score());
+    }
+    
+    [Fact(Skip = "wip")]
+    public void partialGame_spare_after_gutter_then_open_frame()
+    {
+        var bowlingGame = new BowlingGame.BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(5);
+        bowlingGame.Bowl(4);
+        bowlingGame.Bowl(0);
+        Assert.Equal(10, bowlingGame.Score());
+    }
+    
+    [Fact(Skip = "wip")]
+    public void partialGame_spare_after_gutter_then_spare()
+    {
+        var bowlingGame = new BowlingGame.BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(5);
+        bowlingGame.Bowl(5);
+        bowlingGame.Bowl(0);
+        Assert.Equal(10, bowlingGame.Score());
+    }
+    
+    [Fact(Skip = "wip")]
+    public void partialGame_spare_after_gutter_then_strike()
+    {
+        var bowlingGame = new BowlingGame.BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(0);
+        Assert.Equal(10, bowlingGame.Score());
+    }
+    
+    [Fact(Skip = "wip")]
+    public void partialGame_spare_after_gutter_followed_by_all_strikes()
+    {
+        var bowlingGame = new BowlingGame.BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+    }
+    
+    
+    [Fact]
     public void partialGame_strikeInFirstFrame_followedByGutterBalls() {
         var bowlingGame = new BowlingGame.BowlingGame();
         bowlingGame.Bowl(10);
