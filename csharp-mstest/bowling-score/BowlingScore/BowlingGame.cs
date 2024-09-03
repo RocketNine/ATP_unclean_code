@@ -8,78 +8,133 @@ public class BowlingGame
     
     public void Bowl(int pinsKnockedDown)
     {
-        if (pinsKnockedDown >= 10) {
+        if ((pinsKnockedDown >= 10) && (x % 2 == 0))
+        {
             x++;
         }
-        if (x <= 23) {
-            this.p[x++] = pinsKnockedDown;
-        }    
+
+        if (x <= 23)
+        {
+            // this.p[x++] = pinsKnockedDown; 
+            if (pinsKnockedDown == 0)
+            {
+                this.p[x++] = -1;
+            }
+            else
+            {
+                this.p[x++] = pinsKnockedDown;
+            }
+        }
     }
 
     public int Score()
     {
         int y = 0;
-        for (int i = 0; i < p.Length; i++) {
-            if (p[i] != 10) {
-                if (i > 0 && i % 2 == 1) {
+        for (int i = 0; i < p.Length; i++)
+        {
+            if (p[i] != 10)
+            {
+                if (i > 0 && i % 2 == 1)
+                {
                     int y2 = p[i] + p[i - 1];
-                    if (y2 == 10) {
-                        y += p[i + 1];
+                    if (y2 == 10)
+                    {
+                        y += Math.Max(0, p[i + 1]);
                     }
                     //if (y2 == 10) {
                     //  y = p[i +1];
                     //}
                 }
-            } else if (p[i] == 10) {
-                if (i <= 17) {
-                    if (p[i + 2] != 10) {
-                        y += p[i + 1];
-                        y += p[i + 2];
-                    } else {
-                        y += p[i + 2];
-                        if (p[i + 4] < 10) {
-                            y += p[i + 3];
-                        } else {
-                            y += p[i + 4];
+            }
+            else if (p[i] == 10)
+            {
+                if (i <= 17)
+                {
+                    if (p[i - 1] == -1)
+                    {
+                        if (p[i + 2] != 10)
+                        {
+                            y += Math.Max(0, p[i + 1]);
+                        }
+                        else
+                        {
+                            y += Math.Max(0, p[i + 2]);
                         }
                     }
-                } else {
-                    if (i == 18) {
+                    else if (p[i + 2] != 10)
+                    {
+                        y += Math.Max(0, p[i + 1]);
+                        y += Math.Max(0, p[i + 2]);
+                    }
+                    else
+                    {
+                        y += p[i + 2];
+                        if (p[i + 4] < 10)
+                        {
+                            y += Math.Max(0, p[i + 3]);
+                        }
+                        else
+                        {
+                            y += Math.Max(0, p[i + 4]);
+                        }
+                    }
+                }
+                else
+                {
+                    if (i == 18)
+                    {
                         //RF13213 - Lead says this code isn't needed
-                        if (p[i + 2] != 10) {
+                        if (p[i + 2] != 10)
+                        {
                             y += p[i + 1];
                             y += p[i + 2];
-                        } else {
+                        }
+                        else
+                        {
                             y += p[i + 2];
                             y += p[i + 3];
                         }
+
                         y += p[i];
-                    } else {
-                        if (i == 21) {
-                            if (p[i+1] < 10) {
+                    }
+                    else
+                    {
+                        if (i == 21)
+                        {
+                            if (p[i + 1] < 10)
+                            {
                                 y += p[i + 1];
                             }
-                            if (p[i] == 10) {
+
+                            if (p[i] == 10)
+                            {
                                 y += p[i];
                             }
 //                            } else {
 //                                y += p[i + 1];
 //                            }
-                        } else if (i == 23) {
+                        }
+                        else if (i == 23)
+                        {
                             y += p[i];
                         }
 //                        y += p[i+2];
 //                        y += 10;
                     }
                 }
-            } else {
+            }
+            else
+            {
                 // y += p[i+1];
                 // y += p[i+2];
             }
-            if (i < 20) {
-                y += p[i];
+
+            if (i < 20)
+            {
+                y += Math.Max(0, p[i]);
             }
         }
+
         return y;
     }
 }
