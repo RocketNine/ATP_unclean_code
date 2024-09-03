@@ -77,7 +77,7 @@ public class BowlingGameTest
         Assert.Equal(10, bowlingGame.Score());
     }
 
-    [Fact(Skip = "wip")]
+    [Fact]
     public void partialGame_spare_after_gutter_then_one_pin()
     {
         var bowlingGame = new BowlingGame.BowlingGame();
@@ -87,7 +87,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        Assert.Equal(10, bowlingGame.Score());
+        Assert.Equal(13, bowlingGame.Score());
     }
     
     [Fact(Skip = "wip")]
@@ -99,7 +99,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(4);
         bowlingGame.Bowl(0);
-        Assert.Equal(10, bowlingGame.Score());
+        Assert.Equal(24, bowlingGame.Score());
     }
     
     [Fact(Skip = "wip")]
@@ -111,7 +111,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(0);
-        Assert.Equal(10, bowlingGame.Score());
+        Assert.Equal(25, bowlingGame.Score());
     }
     
     [Fact(Skip = "wip")]
@@ -122,7 +122,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
-        Assert.Equal(10, bowlingGame.Score());
+        Assert.Equal(30, bowlingGame.Score());
     }
     
     [Fact(Skip = "wip")]
@@ -142,6 +142,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
+        Assert.Equal(290, bowlingGame.Score());
     }
     
     
