@@ -25,7 +25,10 @@ class Hiker(object):
             elif self.r[i] == 10:
                 if i <= 17:
                     if self.r[i-1] == -1:
-                        y += max(0, self.r[i + 1])
+                        if self.r[i + 2] != 10:
+                            y += max(0, self.r[i + 1])
+                        else:
+                            y += max(0, self.r[i + 2])
                     elif self.r[i + 2] != 10:
                         y += max(0, self.r[i + 1])
                         y += max(0, self.r[i + 2])
