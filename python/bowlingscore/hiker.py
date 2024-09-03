@@ -19,7 +19,7 @@ class Hiker(object):
                 if i > 0 and i % 2 == 1:
                     y2 = self.r[i] + self.r[i - 1]
                     if y2 == 10:
-                        y += self.r[i + 1]
+                        y += max(0, self.r[i + 1])
             #               if (y2 == 10) {
             #               y = self.rolls[i +1];
             elif self.r[i] == 10:
