@@ -13,10 +13,14 @@ export class Hiker {
     //
 
     for (let i = 0; i < this.r.length; i++) {
-      if (this.r[i] == 10) {
+      if ((this.r[i] >= 10) && (r2.length % 2 == 0)) {
         r2.push(0);
       }
-      r2.push(this.r[i]);
+      if (this.r[i] == 0) {
+        r2.push(-1);
+      } else {
+        r2.push(this.r[i]);
+      }
     }
     this.r = r2;
   }
@@ -29,21 +33,30 @@ export class Hiker {
         if ((i > 0) && (i % 2 == 1)) {
           let y2 = this.r[i] + this.r[i - 1];
           if (y2 == 10) {
-            y += this.r[i + 1];
+            y += Math.max(0, this.r[i + 1]);
           }
         }
       } else if (this.r[i] == 10) {
 
         if (i <= 17) {
-          if (this.r[i + 2] != 10) {
-            y += this.r[i + 1];
-            y += this.r[i + 2];
+          if (this.r[i - 1] == -1) {
+            if (this.r[i + 2] != 10)
+            {
+              y += Math.max(0, this.r[i + 1]);
+            }
+            else
+            {
+              y += Math.max(0, this.r[i + 2]);
+            }
+          } else if (this.r[i + 2] != 10) {
+            y += Math.max(0, this.r[i + 1]);
+            y += Math.max(0, this.r[i + 2]);
           } else {
             y += this.r[i + 2];
             if (this.r[i + 4] < 10) {
-              y += this.r[i + 3];
+              y += Math.max(0, this.r[i + 3]);
             } else {
-              y += this.r[i + 4];
+              y += Math.max(0, this.r[i + 4]);
             }
           }
         } else {
@@ -79,7 +92,7 @@ export class Hiker {
 
       }
       if (i < 20) {
-        y += this.r[i];
+        y += Math.max(0, this.r[i]);
       }
     }
     return y;

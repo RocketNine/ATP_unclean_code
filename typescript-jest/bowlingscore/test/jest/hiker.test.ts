@@ -56,6 +56,17 @@ describe('Full game can be scored correctly.', () => {
     expect(actual).toEqual(300);
   });
 
+  test('gutter then spare followed by all strikes', () => {
+    const rolls = [
+      0,10, 10, 10, 10, 10, 10, 10, 10, 10, 10,10,10
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(290);
+  });
+
   test('almost perfect game scores 299', () => {
     const rolls = [
       10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9
@@ -111,6 +122,60 @@ describe('Partial game can be scored correctly.', () => {
     let actual = bowling.score();
 
     expect(actual).toEqual(47);
+  });
+  test('spare after gutter then gutters', () => {
+    const rolls = [
+      0,10, 0,0
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(10);
+  });
+
+  test('spare after gutter then one pin', () => {
+    const rolls = [
+      0,10, 1,1, 0,0
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(13);
+  });
+
+  test('spare after gutter then open frame', () => {
+    const rolls = [
+      0,10, 5,4, 0,0
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(24);
+  });
+
+  test('spare after gutter then spare', () => {
+    const rolls = [
+      0,10, 5,5, 0,0
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(25);
+  });
+
+  test('spare after gutter then strike', () => {
+    const rolls = [
+      0,10, 10, 0,0
+    ];
+    const bowling = new Hiker(rolls);
+
+    let actual = bowling.score();
+
+    expect(actual).toEqual(30);
   });
 
   test('strike in first frame followed by gutter balls', () => {
