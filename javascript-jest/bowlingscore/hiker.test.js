@@ -180,8 +180,6 @@ describe('Partial game can be scored correctly.', () => {
         expect(actual).toEqual(30);
     });
 
-//----------
-
     test('strike in first frame followed by gutter balls', () => {
         const rolls = [
             10, 0,0,
