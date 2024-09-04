@@ -125,28 +125,6 @@ class HikerTest {
     }
 
     @Test
-    public void partialGame_spare_after_gutter_followed_by_all_strikes()
-    {
-        Hiker bowlingGame = new Hiker();
-        bowlingGame.bowl(0);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        bowlingGame.bowl(10);
-        assertEquals(290, bowlingGame.score());
-    }
-
-
-
-    @Test
     void partialGame_strikeInFirstFrame_followedByGutterBalls() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(10);
@@ -232,6 +210,26 @@ class HikerTest {
         bowlingGame.bowl(9);
 
         assertEquals(299, bowlingGame.score());
+    }
+
+    @Test
+    public void fullGame_spare_after_gutter_followed_by_all_strikes()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        assertEquals(290, bowlingGame.score());
     }
 
     @Test
