@@ -124,26 +124,6 @@ public class BowlingGameTest
         bowlingGame.Bowl(0);
         Assert.AreEqual(30, bowlingGame.Score());
     }
-        
-    [Test]
-    public void partialGame_spare_after_gutter_followed_by_all_strikes()
-    {
-        var bowlingGame = new BowlingGame();
-        bowlingGame.Bowl(0);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        bowlingGame.Bowl(10);
-        Assert.AreEqual(290, bowlingGame.Score());
-    }
     
     [Test]
     public void partialGame_strikeInFirstFrame_followedByGutterBalls() {
@@ -231,6 +211,26 @@ public class BowlingGameTest
         bowlingGame.Bowl(9);
 
         Assert.AreEqual(299, bowlingGame.Score());
+    }
+
+    [Test]
+    public void fullGame_spare_after_gutter_followed_by_all_strikes()
+    {
+        var bowlingGame = new BowlingGame();
+        bowlingGame.Bowl(0);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        bowlingGame.Bowl(10);
+        Assert.AreEqual(290, bowlingGame.Score());
     }
 
     [Test]
