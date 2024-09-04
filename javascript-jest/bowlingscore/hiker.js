@@ -14,10 +14,14 @@ class Hiker {
         //
 
         for (let i = 0; i < this.r.length; i++) {
-            if (this.r[i] == 10) {
+            if ((this.r[i] >= 10) && (this.r2.length % 2 == 0)) {
                 this.r2.push(0);
             }
-            this.r2.push(this.r[i]);
+            if (this.r[i] == 0) {
+                this.r2.push(-1);
+            } else {
+                this.r2.push(this.r[i]);
+            }
         }
         this.r = this.r2;
     }
@@ -30,21 +34,31 @@ class Hiker {
                 if ((i > 0) && (i % 2 == 1)) {
                     this.y2 = this.r[i] + this.r[i - 1];
                     if (this.y2 == 10) {
-                        this.y += this.r[i + 1];
+                        this.y += Math.max(0, this.r[i + 1]);
                     }
                 }
             } else if (this.r[i] == 10) {
 
                 if (i <= 17) {
-                    if (this.r[i + 2] != 10) {
-                        this.y += this.r[i + 1];
-                        this.y += this.r[i + 2];
+
+                    if (this.r[i - 1] == -1) {
+                        if (this.r[i + 2] != 10)
+                        {
+                            this.y += Math.max(0, this.r[i + 1]);
+                        }
+                        else
+                        {
+                            this.y += Math.max(0, this.r[i + 2]);
+                        }
+                    } else if (this.r[i + 2] != 10) {
+                        this.y += Math.max(0, this.r[i + 1]);
+                        this.y += Math.max(0, this.r[i + 2]);
                     } else {
                         this.y += this.r[i + 2];
                         if (this.r[i + 4] < 10) {
-                            this.y += this.r[i + 3];
+                            this.y += Math.max(0, this.r[i + 3]);
                         } else {
-                            this.y += this.r[i + 4];
+                            this.y += Math.max(0, this.r[i + 4]);
                         }
                     }
                 } else {
@@ -61,8 +75,8 @@ class Hiker {
                         if (i === 21) {
                             if (this.r[i] == 10)
                                 this.y += this.r[i];
-                            if (this.r[i+1] < 10) {
-                                this.y +=  this.r[i+1];
+                            if (this.r[i + 1] < 10) {
+                                this.y += this.r[i + 1];
                             }
                         } else if (i === 23) {
                             this.y += this.r[i];
@@ -79,7 +93,7 @@ class Hiker {
                 //              this.y = this.rolls[i + 1];
             }
             if (i < 20) {
-                this.y += this.r[i];
+                this.y += Math.max(0, this.r[i]);
             }
         }
         return this.y;
