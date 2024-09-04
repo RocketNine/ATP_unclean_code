@@ -1,6 +1,6 @@
 use strict;
 use warnings 'all';
-use Test::Simple tests => 16; # number of tests (max=254)
+use Test::Simple tests => 22; # number of tests (max=254)
 
 require "hiker.pl";
 
@@ -15,6 +15,16 @@ ok(  60 == score_game("33-33-33-33-33-33-33-33-33-33"), "Three pins knocked down
 ok(  10 == score_game("73-00-00-00-00-00-00-00-00-00"), "Spare with no bonus pins, only count the 10 knocked down" );
 
 ok(  18 == score_game("91-40-00-00-00-00-00-00-00-00"), "Spare with bonus pins, bonus added to spare and counted on its own" );
+
+ok(  10 == score_game("0X-00-00-00-00-00-00-00-00-00"), "gutter then spare followed by all gutters" );
+
+ok(  13 == score_game("0X-11-00-00-00-00-00-00-00-00"), "gutter then spare, then a couple of pins" );
+
+ok(  24 == score_game("0X-54-00-00-00-00-00-00-00-00"), "gutter then spare followed by an open frame" );
+
+ok(  25 == score_game("0X-55-00-00-00-00-00-00-00-00"), "gutter then spare followed by a spare" );
+
+ok(  30 == score_game("0X-X-00-00-00-00-00-00-00-00"), "gutter then spare followed by a strike" );
 
 ok(  47 == score_game("73-91-90-00-00-00-00-00-00-00"), "Two spares in a row" );
 
@@ -33,5 +43,7 @@ ok(  60 == score_game("00-00-00-00-00-00-00-00-X-X-XX"), "Gutters, then strikes 
 ok( 299 == score_game("X-X-X-X-X-X-X-X-X-X-X9"), "Almost perfect game, choked on last roll and left 1 pin standing" );
 
 ok( 300 == score_game("X-X-X-X-X-X-X-X-X-X-XX"), "Perfect game scores 300" );
+
+ok( 290 == score_game("0X-X-X-X-X-X-X-X-X-X-XX"), "gutter then spare followed by all strikes" );
 
 ok( 187 == score_game("X-91-55-72-X-X-X-90-82-91X"), "Full game example from the readme" );
