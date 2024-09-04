@@ -66,6 +66,87 @@ class HikerTest {
     }
 
     @Test
+    public void partialGame_spare_after_gutter_then_gutters()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(0);
+        assertEquals(10, bowlingGame.score());
+    }
+
+    @Test
+    public void partialGame_spare_after_gutter_then_one_pin()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(1);
+        bowlingGame.bowl(1);
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(0);
+        assertEquals(13, bowlingGame.score());
+    }
+
+    @Test
+    public void partialGame_spare_after_gutter_then_open_frame()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(5);
+        bowlingGame.bowl(4);
+        bowlingGame.bowl(0);
+        assertEquals(24, bowlingGame.score());
+    }
+
+    @Test
+    public void partialGame_spare_after_gutter_then_spare()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(5);
+        bowlingGame.bowl(5);
+        bowlingGame.bowl(0);
+        assertEquals(25, bowlingGame.score());
+    }
+
+    @Test
+    public void partialGame_spare_after_gutter_then_strike()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(0);
+        assertEquals(30, bowlingGame.score());
+    }
+
+    @Test
+    public void partialGame_spare_after_gutter_followed_by_all_strikes()
+    {
+        Hiker bowlingGame = new Hiker();
+        bowlingGame.bowl(0);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        bowlingGame.bowl(10);
+        assertEquals(290, bowlingGame.score());
+    }
+
+
+
+    @Test
     void partialGame_strikeInFirstFrame_followedByGutterBalls() {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(10);
