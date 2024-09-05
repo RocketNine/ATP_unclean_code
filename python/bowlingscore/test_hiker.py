@@ -43,6 +43,36 @@ def test_partial_game_spares_in_both_frames_1_and_2():
     assert sut.score() == 47
 
 
+def test_partial_game_spare_after_gutter_then_gutters():
+    rolls = [0,10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 10
+
+
+def test_partial_game_spare_after_gutter_then_one_pin():
+    rolls = [0,10, 1,1, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 13
+
+
+def test_partial_game_spare_after_gutter_then_open_frame():
+    rolls = [0,10, 5,4, 0]
+    sut = Hiker(rolls)
+    assert sut.score() == 24
+
+
+def test_partial_game_spare_after_gutter_then_spare():
+    rolls = [0,10, 5,5, 0]
+    sut = Hiker(rolls)
+    assert sut.score() == 25
+
+
+def test_partial_game_spare_after_gutter_then_strike():
+    rolls = [0,10, 10, 0,0]
+    sut = Hiker(rolls)
+    assert sut.score() == 30
+
+
 def test_partial_game_strike_in_first_frame_followed_by_gutter_balls():
     rolls = [10,  0, 0]
     sut = Hiker(rolls)
@@ -85,37 +115,13 @@ def test_full_game_almost_perfect_game_miss_one_pin_on_last_roll():
     assert sut.score() == 299
 
 
+def test_full_game_spare_after_gutter_followed_by_all_strikes():
+    rolls = [0,10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+    sut = Hiker(rolls)
+    assert sut.score() == 290
+
+
 def test_full_game_example_in_readme():
     rolls = [10,  9, 1,  5, 5,  7, 2,  10, 10, 10,  9, 0,  8, 2,  9, 1, 10]
     sut = Hiker(rolls)
     assert sut.score() == 187
-
-def test_spare_after_gutter_then_gutters():
-    rolls = [0,10, 0,0]
-    sut = Hiker(rolls)
-    assert sut.score() == 10
-
-def test_spare_after_gutter_then_one_pin():
-    rolls = [0,10, 1,1, 0,0]
-    sut = Hiker(rolls)
-    assert sut.score() == 13
-
-def test_spare_after_gutter_then_open_frame():
-    rolls = [0,10, 5,4, 0]
-    sut = Hiker(rolls)
-    assert sut.score() == 24
-
-def test_spare_after_gutter_then_spare():
-    rolls = [0,10, 5,5, 0]
-    sut = Hiker(rolls)
-    assert sut.score() == 25
-
-def test_spare_after_gutter_then_strike():
-    rolls = [0,10, 10, 0,0]
-    sut = Hiker(rolls)
-    assert sut.score() == 30
-
-def test_spare_after_gutter_followed_by_all_strikes():
-    rolls = [0,10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
-    sut = Hiker(rolls)
-    assert sut.score() == 290
