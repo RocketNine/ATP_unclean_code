@@ -1,4 +1,5 @@
 ﻿using System.Net.Mail;
+using static System.Math;
 
 namespace BowlingGame;
 
@@ -40,7 +41,7 @@ public class BowlingGame
                     int y2 = p[i] + p[i - 1];
                     if (y2 == 10)
                     {
-                        y += Math.Max(0, p[i + 1]);
+                        y += Max(0, p[i + 1]);
                     }
                     //if (y2 == 10) {
                     //  y = p[i +1];
@@ -55,28 +56,28 @@ public class BowlingGame
                     {
                         if (p[i + 2] != 10)
                         {
-                            y += Math.Max(0, p[i + 1]);
+                            y += Max(0, p[i + 1]);
                         }
                         else
                         {
-                            y += Math.Max(0, p[i + 2]);
+                            y += Max(0, p[i + 2]);
                         }
                     }
                     else if (p[i + 2] != 10)
                     {
-                        y += Math.Max(0, p[i + 1]);
-                        y += Math.Max(0, p[i + 2]);
+                        y += Max(0, p[i + 1]);
+                        y += Max(0, p[i + 2]);
                     }
                     else
                     {
                         y += p[i + 2];
                         if (p[i + 4] < 10)
                         {
-                            y += Math.Max(0, p[i + 3]);
+                            y += Max(0, p[i + 3]);
                         }
                         else
                         {
-                            y += Math.Max(0, p[i + 4]);
+                            y += Max(0, p[i + 4]);
                         }
                     }
                 }
@@ -132,7 +133,7 @@ public class BowlingGame
 
             if (i < 20)
             {
-                y += Math.Max(0, p[i]);
+                y += Max(0, p[i]);
             }
         }
 
