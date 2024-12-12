@@ -66,7 +66,7 @@ class HikerTest {
     }
 
     @Test
-    public void partialGame_spare_after_gutter_then_gutters()
+    void partialGame_spare_after_gutter_then_gutters()
     {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(0);
@@ -77,7 +77,7 @@ class HikerTest {
     }
 
     @Test
-    public void partialGame_spare_after_gutter_then_one_pin()
+    void partialGame_spare_after_gutter_then_one_pin()
     {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(0);
@@ -90,7 +90,7 @@ class HikerTest {
     }
 
     @Test
-    public void partialGame_spare_after_gutter_then_open_frame()
+    void partialGame_spare_after_gutter_then_open_frame()
     {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(0);
@@ -102,7 +102,7 @@ class HikerTest {
     }
 
     @Test
-    public void partialGame_spare_after_gutter_then_spare()
+    void partialGame_spare_after_gutter_then_spare()
     {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(0);
@@ -114,7 +114,7 @@ class HikerTest {
     }
 
     @Test
-    public void partialGame_spare_after_gutter_then_strike()
+    void partialGame_spare_after_gutter_then_strike()
     {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(0);
@@ -213,7 +213,7 @@ class HikerTest {
     }
 
     @Test
-    public void fullGame_spare_after_gutter_followed_by_all_strikes()
+    void fullGame_spare_after_gutter_followed_by_all_strikes()
     {
         Hiker bowlingGame = new Hiker();
         bowlingGame.bowl(0);
