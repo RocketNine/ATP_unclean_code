@@ -8,19 +8,17 @@ buildscript {
         version_mockito = '2.21.0'
         version_commonsLang3 = '3.7'
     }
-    repositories {
-        jcenter()
-    }
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
 
-sourceCompatibility = JavaVersion.VERSION_21
-targetCompatibility = JavaVersion.VERSION_21
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
 
 repositories {
-    jcenter()
     google()
     mavenCentral()
     maven { url "https://dl.bintray.com/groovy/maven" }
@@ -48,8 +46,8 @@ dependencies {
 idea {
     module {
         inheritOutputDirs = false
-        outputDir = compileJava.destinationDir
-        testOutputDir = compileTestJava.destinationDir
+        // outputDir = JavaCompile.destinationDirectory
+        // testOutputDir = JavaCompile.destinationDirectory
         downloadJavadoc = false
         downloadSources = true
     }
