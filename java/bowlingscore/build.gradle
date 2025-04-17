@@ -1,7 +1,7 @@
 buildscript {
     ext {
         version_slf4j = '1.7.25'
-        version_logback = '1.2.3'
+        version_logback = '1.4.12'
         version_junit5 = '5.3.1'
         version_junit5_suite = '1.2.0'
         version_assertJ = '3.10.0'
@@ -33,7 +33,6 @@ dependencies {
     implementation group: 'org.slf4j', name: 'jcl-over-slf4j', version: rootProject.version_slf4j
     implementation group: 'org.slf4j', name: 'log4j-over-slf4j', version: rootProject.version_slf4j
     implementation group: 'org.slf4j', name: 'slf4j-api', version: rootProject.version_slf4j
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: rootProject.version_logback
 
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: rootProject.version_junit5
     testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: rootProject.version_junit5
