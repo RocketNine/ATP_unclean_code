@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 namespace BowlingScore.Tests;
 
@@ -10,21 +11,24 @@ public class BowlingGameTest
         var bowlingGame = new BowlingGame();
         RollSomeBalls(bowlingGame, 0);
 
-        Assert.AreEqual(0, bowlingGame.Score());
+        // TODO 2025-08 constraint-based Assert model prefers assert to look like
+        // Assert.That(bowlingGame.Score(), Is.EqualTo(0));
+        // Convert all assertions in this file to that model
+        ClassicAssert.AreEqual(0, bowlingGame.Score());
     }
 
     [Test]
     public void fullGame_eachFrame_onlyOnePinKnockedDown() {
         var bowlingGame = new BowlingGame();
         RollSomeBalls(bowlingGame, 1);
-        Assert.AreEqual(20, bowlingGame.Score());
+        ClassicAssert.AreEqual(20, bowlingGame.Score());
     }
 
     [Test]
     public void fullGame_eachFrame_threePinsKnockedDown() {
         var bowlingGame = new BowlingGame();
         RollSomeBalls(bowlingGame, 3);
-        Assert.AreEqual(60, bowlingGame.Score());
+        ClassicAssert.AreEqual(60, bowlingGame.Score());
     }
 
     [Test]
@@ -34,7 +38,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(6);
         bowlingGame.Bowl(3);
-        Assert.AreEqual(15, bowlingGame.Score());
+        ClassicAssert.AreEqual(15, bowlingGame.Score());
     }
 
     [Test]
@@ -43,7 +47,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(7);
         bowlingGame.Bowl(3);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(10, bowlingGame.Score());
+        ClassicAssert.AreEqual(10, bowlingGame.Score());
     }
 
     [Test]
@@ -52,7 +56,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(9);
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(4);
-        Assert.AreEqual(18, bowlingGame.Score());
+        ClassicAssert.AreEqual(18, bowlingGame.Score());
     }
 
     [Test]
@@ -63,7 +67,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(9);
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(9);
-        Assert.AreEqual(47, bowlingGame.Score());
+        ClassicAssert.AreEqual(47, bowlingGame.Score());
     }
 
     [Test]
@@ -74,7 +78,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(10, bowlingGame.Score());
+        ClassicAssert.AreEqual(10, bowlingGame.Score());
     }
     
     [Test]
@@ -87,7 +91,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(13, bowlingGame.Score());
+        ClassicAssert.AreEqual(13, bowlingGame.Score());
     }
     
     [Test]
@@ -99,7 +103,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(4);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(24, bowlingGame.Score());
+        ClassicAssert.AreEqual(24, bowlingGame.Score());
     }
         
     [Test]
@@ -111,7 +115,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(25, bowlingGame.Score());
+        ClassicAssert.AreEqual(25, bowlingGame.Score());
     }
         
     [Test]
@@ -122,7 +126,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(30, bowlingGame.Score());
+        ClassicAssert.AreEqual(30, bowlingGame.Score());
     }
     
     [Test]
@@ -131,7 +135,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(10, bowlingGame.Score());
+        ClassicAssert.AreEqual(10, bowlingGame.Score());
     }
 
     [Test]
@@ -140,7 +144,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(7);
         bowlingGame.Bowl(2);
-        Assert.AreEqual(28, bowlingGame.Score());
+        ClassicAssert.AreEqual(28, bowlingGame.Score());
     }
 
     [Test]
@@ -151,7 +155,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(7);
         bowlingGame.Bowl(2);
-        Assert.AreEqual(37, bowlingGame.Score());
+        ClassicAssert.AreEqual(37, bowlingGame.Score());
     }
 
     [Test]
@@ -161,7 +165,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(30, bowlingGame.Score());
+        ClassicAssert.AreEqual(30, bowlingGame.Score());
     }
 
     [Test]
@@ -172,7 +176,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        Assert.AreEqual(60, bowlingGame.Score());
+        ClassicAssert.AreEqual(60, bowlingGame.Score());
     }
 
     [Test]
@@ -191,7 +195,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
 
-        Assert.AreEqual(300, bowlingGame.Score());
+        ClassicAssert.AreEqual(300, bowlingGame.Score());
     }
 
     [Test]
@@ -210,7 +214,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(9);
 
-        Assert.AreEqual(299, bowlingGame.Score());
+        ClassicAssert.AreEqual(299, bowlingGame.Score());
     }
 
     [Test]
@@ -230,7 +234,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
-        Assert.AreEqual(290, bowlingGame.Score());
+        ClassicAssert.AreEqual(290, bowlingGame.Score());
     }
 
     [Test]
@@ -263,7 +267,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(10);
 
-        Assert.AreEqual(187, bowlingGame.Score());
+        ClassicAssert.AreEqual(187, bowlingGame.Score());
     }
 
     private void RollSomeBalls(BowlingGame bowlingGame, int b)
