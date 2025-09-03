@@ -6,7 +6,7 @@ buildscript {
         version_junit5_suite = '1.2.0'
         version_assertJ = '3.10.0'
         version_mockito = '2.21.0'
-        version_commonsLang3 = '3.7'
+        version_commonsLang3 = '3.18.0'
     }
 }
 
