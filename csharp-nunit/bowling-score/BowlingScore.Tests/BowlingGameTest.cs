@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using NUnit.Framework.Legacy;
 
 namespace BowlingScore.Tests;
 
@@ -10,25 +9,21 @@ public class BowlingGameTest
     {
         var bowlingGame = new BowlingGame();
         RollSomeBalls(bowlingGame, 0);
-
-        // TODO 2025-08 constraint-based Assert model prefers assert to look like
-        // Assert.That(bowlingGame.Score(), Is.EqualTo(0));
-        // Convert all assertions in this file to that model
-        ClassicAssert.AreEqual(0, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(0));
     }
 
     [Test]
     public void fullGame_eachFrame_onlyOnePinKnockedDown() {
         var bowlingGame = new BowlingGame();
         RollSomeBalls(bowlingGame, 1);
-        ClassicAssert.AreEqual(20, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(20));
     }
 
     [Test]
     public void fullGame_eachFrame_threePinsKnockedDown() {
         var bowlingGame = new BowlingGame();
         RollSomeBalls(bowlingGame, 3);
-        ClassicAssert.AreEqual(60, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(60));
     }
 
     [Test]
@@ -38,7 +33,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(6);
         bowlingGame.Bowl(3);
-        ClassicAssert.AreEqual(15, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(15));
     }
 
     [Test]
@@ -47,7 +42,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(7);
         bowlingGame.Bowl(3);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(10, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(10));
     }
 
     [Test]
@@ -56,7 +51,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(9);
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(4);
-        ClassicAssert.AreEqual(18, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(18));
     }
 
     [Test]
@@ -67,7 +62,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(9);
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(9);
-        ClassicAssert.AreEqual(47, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(47));
     }
 
     [Test]
@@ -78,7 +73,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(10, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(10));
     }
     
     [Test]
@@ -91,7 +86,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(13, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(13));
     }
     
     [Test]
@@ -103,7 +98,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(4);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(24, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(24));
     }
         
     [Test]
@@ -115,7 +110,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(5);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(25, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(25));
     }
         
     [Test]
@@ -126,7 +121,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(30, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(30));
     }
     
     [Test]
@@ -135,7 +130,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(10, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(10));
     }
 
     [Test]
@@ -144,7 +139,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(7);
         bowlingGame.Bowl(2);
-        ClassicAssert.AreEqual(28, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(28));
     }
 
     [Test]
@@ -155,7 +150,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(7);
         bowlingGame.Bowl(2);
-        ClassicAssert.AreEqual(37, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(37));
     }
 
     [Test]
@@ -165,7 +160,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(30, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(30));
     }
 
     [Test]
@@ -176,7 +171,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(0);
         bowlingGame.Bowl(0);
-        ClassicAssert.AreEqual(60, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(60));
     }
 
     [Test]
@@ -195,7 +190,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
 
-        ClassicAssert.AreEqual(300, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(300));
     }
 
     [Test]
@@ -214,7 +209,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(9);
 
-        ClassicAssert.AreEqual(299, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(299));
     }
 
     [Test]
@@ -234,7 +229,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
         bowlingGame.Bowl(10);
-        ClassicAssert.AreEqual(290, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(290));
     }
 
     [Test]
@@ -267,7 +262,7 @@ public class BowlingGameTest
         bowlingGame.Bowl(1);
         bowlingGame.Bowl(10);
 
-        ClassicAssert.AreEqual(187, bowlingGame.Score());
+        Assert.That(bowlingGame.Score(), Is.EqualTo(187));
     }
 
     private void RollSomeBalls(BowlingGame bowlingGame, int b)
